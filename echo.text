@@ -1,0 +1,16 @@
+             <script>
+                    Pusher.logToConsole = true;
+                    window.Echo = new Echo({
+                        broadcaster: 'pusher',
+                        wsHost: window.location.hostname,
+                        wsPort: 6001,
+                        key: 'abdsdsd',
+                        cluster: 'mt1',
+                        forceTLS: true
+                    });
+                    
+                    Echo.channel('testChannel')
+                      .listen('testChannelevent',(e)=>{
+                          console.log(e.message);
+                      })
+                </script>
